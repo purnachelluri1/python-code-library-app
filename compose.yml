@@ -2,6 +2,7 @@
 services:
   db:
     build: /database/
+    image: db:v1
     deploy:
       replicas: 1
     ports:
@@ -11,6 +12,7 @@ services:
 
   auth_service:
     build: /auth/
+    image: auth:v1
     deploy:
       replicas: 1
     ports:
@@ -23,6 +25,7 @@ services:
 
   book_service:
     build: /book/
+    image: book:v1
     deploy:
       replicas: 1
     ports:
@@ -33,6 +36,7 @@ services:
       - db
   borrow_service:
     build: /borrow/
+    image: borrow:v1
     deploy:
       replicas: 1
     ports:
@@ -44,6 +48,7 @@ services:
 
   frontend:
     build: /templates/
+    image: frontend:v1
     deploy:
       replicas: 1
     ports:
