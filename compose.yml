@@ -1,7 +1,7 @@
 ---
 services:
   db:
-    build: /database/
+    build: ./database
     image: db:v1
     deploy:
       replicas: 1
@@ -11,7 +11,7 @@ services:
       - mynetwork
 
   auth_service:
-    build: /auth/
+    build: ./auth
     image: auth:v1
     deploy:
       replicas: 1
@@ -24,7 +24,7 @@ services:
     
 
   book_service:
-    build: /book/
+    build: ./book
     image: book:v1
     deploy:
       replicas: 1
@@ -35,7 +35,7 @@ services:
     depends_on:
       - db
   borrow_service:
-    build: /borrow/
+    build: ./borrow
     image: borrow:v1
     deploy:
       replicas: 1
@@ -47,7 +47,7 @@ services:
       - db
 
   frontend:
-    build: /templates/
+    build: ./templates
     image: frontend:v1
     deploy:
       replicas: 1
