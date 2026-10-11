@@ -19,8 +19,8 @@ services:
       - "5001:5001"
     networks:
       - mynetwork
-    depends_on:
-      - db
+    #depends_on:
+      #- db
     
 
   book_service:
@@ -43,8 +43,8 @@ services:
       - "5003:5003"
     networks:
       - mynetwork
-    depends_on:
-      - db
+    #depends_on:
+     # - db
 
   frontend:
     #build: ./templates
@@ -55,10 +55,10 @@ services:
       - "5000:5000"
     networks:
       - mynetwork
-    depends_on:
-      - auth_service
-      - book_service
-      - borrow_service
+    #depends_on:
+      #- auth_service
+      #- book_service
+      #- borrow_service
 
 networks:
   mynetwork:
