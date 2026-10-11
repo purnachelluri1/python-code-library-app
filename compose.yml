@@ -4,7 +4,7 @@ services:
     #build: ./database
     image: vasuch2626/python-app-db:v1
     deploy:
-      replicas: 1
+      replicas: 3
     ports:
       - "3306:3306"
     networks:
@@ -14,7 +14,7 @@ services:
     #build: ./auth
     image: vasuch2626/python-app-auth:v1
     deploy:
-      replicas: 1
+      replicas: 3
     ports:
       - "5001:5001"
     networks:
@@ -27,7 +27,7 @@ services:
     #build: ./book
     image: vasuch2626/python-app-book:v1
     deploy:
-      replicas: 1
+      replicas: 3
     ports:
       - "5002:5002"
     networks:
@@ -38,7 +38,7 @@ services:
     #build: ./borrow
     image: vasuch2626/python-app-borrow:v1
     deploy:
-      replicas: 1
+      replicas: 3
     ports:
       - "5003:5003"
     networks:
@@ -50,7 +50,7 @@ services:
     #build: ./templates
     image: vasuch2626/python-app-frontend:v1
     deploy:
-      replicas: 1
+      replicas: 3
     ports:
       - "5000:5000"
     networks:
